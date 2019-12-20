@@ -37,10 +37,13 @@ spotbugs {
     effort = "max"
     reportLevel = "low"
     sourceSets = [sourceSets.main, sourceSets.test]
-    reports {
+}
+
+tasks.withType(com.github.spotbugs.SpotBugsTask) {
+  reports {
         xml.enabled = false
         html.enabled = true
-   }
+  }
 }
 
 spotbugsMain {
