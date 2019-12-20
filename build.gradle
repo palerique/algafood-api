@@ -38,12 +38,8 @@ spotbugs {
     reportLevel = "low"
     sourceSets = [sourceSets.main, sourceSets.test]
     reports {
-      html {
-        enabled = true
-      }
-      xml {
-        enabled = false
-      }
+        xml.enabled = false
+        html.enabled = true
    }
 }
 
