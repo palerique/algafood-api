@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.2.1.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'java'
+    id "com.github.spotbugs" version "1.7.1"
 }
 
 group = 'com.example'
@@ -24,4 +25,16 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+spotbugs {
+    toolVersion = '4.0.0-beta4'
+    ignoreFailures = false
+    effort = "max"
+    reportLevel = "low"
+    sourceSets = [sourceSets.main, sourceSets.test]
+}
+
+spotbugsMain {
+    source = "src/main/java"
 }
