@@ -14,8 +14,13 @@ jobs:
       with:
         java-version: 11
     - name: Build with Gradle
-      run: ./gradlew build
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v1.1
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: ./gradlew clean build check
+#    - name: sonar-scanner
+#      uses: Warchant/setup-sonar-scanner@v1
+#      with:
+#       # Sonar-scanner version
+#       version: 4.2.0.1873
+#    - name: SonarCloud Scan
+#      uses: SonarSource/sonarcloud-github-action@v1.1
+#      env:
+#        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
