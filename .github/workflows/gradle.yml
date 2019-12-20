@@ -15,6 +15,11 @@ jobs:
         java-version: 11
     - name: Build with Gradle
       run: ./gradlew clean build check
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: Reports
+        path: build/reports/
 #    - name: sonar-scanner
 #      uses: Warchant/setup-sonar-scanner@v1
 #      with:
