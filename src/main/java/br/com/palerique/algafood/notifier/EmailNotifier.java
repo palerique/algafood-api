@@ -10,7 +10,6 @@ public class EmailNotifier implements Notifier {
 
   public EmailNotifier(String smtpHost) {
     this.smtpHost = smtpHost;
-    System.out.printf("SMTP host: %s%n", smtpHost);
   }
 
   @Override
@@ -22,6 +21,7 @@ public class EmailNotifier implements Notifier {
 
     System.out.printf("Notificando %s através do e-mail %s: %s%n",
         customer.getName(), customer.getEmail(), message);
+    System.out.printf("SMTP host: %s%n", this.smtpHost);
   }
 
   public void setUpperCase(boolean upperCase) {
